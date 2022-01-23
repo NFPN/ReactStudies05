@@ -12,6 +12,16 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   //NOTE: Side effects are usually http requests
+
+  useEffect(()=>{
+    console.log('EFFECT RUNNING');
+
+    return () => {
+      console.log("EFFECT CLEANUP");
+    };
+  }, []);
+
+
   useEffect(() => {
     const identifier = setTimeout(() => {
       console.log("Checking form validity!");
